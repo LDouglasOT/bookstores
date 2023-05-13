@@ -24,10 +24,10 @@
 - [📝 License](#license)
 
 
-# 📖<a name="about-project">Math Magician</a>
+# 📖<a name="about-project">Book Store App</a>
 
 
-***In this activity you will set up a Calculator project for the Math Magician SPA, using React.***
+***This is a simple book store created using ReactJS.***
 
 
 ## 🛠 Built With <a name="built-with">Vscode, Github</a>
@@ -61,8 +61,8 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **[SPA]()**
-- **[Calculator]()**
+- **[REACT APP]()**
+- **[BOOK STORE]()**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,7 +91,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```
-gh repo clone Chaseknis/math_magician_react
+gh repo clone LdouglasOt/bookstore
 ```
 
 ### Install
@@ -101,8 +101,8 @@ To obtain a copy of this repository, clone it to your desired folder:
 Commands: 
 
 ```sh
-  gh repo clone Chaseknis/math_magician_react
-  cd leaderboard
+  gh repo clone LdouglasOt/bookstore
+  cd bookstore
   npm install -y
 ```
 <br><br>
@@ -162,7 +162,7 @@ To run tests, run the following command:
 
 > I'll add the following section to the webpage.
 
-- [ ] **[Making simple math calculations]()**
+- [ ] **[Storing books and their authors]()**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,7 +171,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/LdouglasOT/math_magician_react/issues).
+Feel free to check the [issues page](https://github.com/LDouglasOT/booktstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
