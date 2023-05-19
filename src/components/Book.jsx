@@ -10,6 +10,7 @@ function Book({ remove, item }) {
     </div>
   );
 }
+
 Book.propTypes = {
   remove: PropTypes.func,
   item: PropTypes.objectOf,

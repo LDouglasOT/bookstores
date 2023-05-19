@@ -1,7 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 /* eslint no-param-reassign: "error" */
 const initialState = {
-  books: [],
+  books: [{
+    id: 'item',
+    titleName: 'The warring princes',
+    author: 'Luzinda Douglas',
+  }, {
+    id: 'item',
+    titleName: 'Cognitives sciences',
+    author: 'Jemba Peter',
+  }, {
+    id: 'item3',
+    titleName: 'Killing Mr Json',
+    author: 'Luzinda Kak',
+  }, {
+    id: 'item4',
+    titleName: 'Price tags',
+    author: 'Luzinda',
+  }],
   count: 0,
 };
 
