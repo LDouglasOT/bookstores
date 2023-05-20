@@ -25,7 +25,6 @@ export const saveBook = createAsyncThunk(
       author: bookdata.author,
       category: bookdata.category,
     };
-    console.log(data);
     const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${key}/books`;
     let response = await axios.post(url, data);
     response = await response.json();
