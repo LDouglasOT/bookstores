@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchBooks = createAsyncThunk(
   'person/fetch', async () => {
-    const key = 'i4gWNXuwNAQ6ShOCsDCu';
+    const key = '7UQ78NetEF0NtVVKtgJy';
     const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${key}/books`;
     const data = await axios.get(url);
     const json = JSON.stringify(data.data);
@@ -18,7 +18,7 @@ export const fetchBooks = createAsyncThunk(
 );
 export const saveBook = createAsyncThunk(
   'person/save', async (bookdata) => {
-    const key = 'i4gWNXuwNAQ6ShOCsDCu';
+    const key = '7UQ78NetEF0NtVVKtgJy';
     const data = {
       item_id: bookdata.item_id,
       title: bookdata.title,
@@ -29,13 +29,14 @@ export const saveBook = createAsyncThunk(
     const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${key}/books`;
     let response = await axios.post(url, data);
     response = await response.json();
+    console.log(response);
     fetchBooks();
     return response;
   },
 );
 export const deleteBook = createAsyncThunk(
   'person/delete', async (id) => {
-    const key = 'i4gWNXuwNAQ6ShOCsDCu';
+    const key = '7UQ78NetEF0NtVVKtgJy';
     const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${key}/books/${id}`;
     await axios.delete(url);
     const propid = id;

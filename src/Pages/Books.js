@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes, { func } from 'prop-types';
 import Book from '../components/Book';
 import { fetchBooks, saveBook } from '../components/redux/books/bookSlice';
 
-function Books() {
+function Books({ statechange }) {
   const [name, setName] = useState('');
   const [btitle, setTitle] = useState('');
   const books = useSelector((state) => state.book.books);
   const Dispatch = useDispatch();
   useEffect(() => {
     Dispatch(fetchBooks());
+    statechange(false);
   }, [0]);
+
   const save = async (e) => {
     e.preventDefault();
     const data = {
@@ -19,7 +22,6 @@ function Books() {
       author: name,
       category: 'Classics',
     };
-    console.log(data);
     await Dispatch(saveBook(data)).then(() => {
       Dispatch(fetchBooks());
     });
@@ -27,20 +29,24 @@ function Books() {
 
   return (
     <div className="book-page">
-      <div>
-        <h2>New Book</h2>
+      <div className="form-wrapper">
+        <p className="new-book">ADD NEW BOOK</p>
         <form action="" className="book-form">
-          <input className="entry" onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Author" />
-          <input className="entry" type="text" onChange={(e) => setName(e.target.value)} placeholder="Title" />
-          <input className="submit-btn" type="submit" value="Save Book" onClick={(e) => save(e)} />
+          <input className="entry" type="text" onChange={(e) => setName(e.target.value)} placeholder="Book Title" />
+          <select className="entryx" onChange={(e) => setTitle(e.target.value)}>
+            <option value="Action">Action</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Economy">Economy</option>
+          </select>
+          <input className="submit-btn" type="submit" value="ADD BOOK" onClick={(e) => save(e)} />
         </form>
       </div>
-      <ul>
-        <h2>Books List</h2>
+      <div className="line" />
+      <ul className="book-list">
         {Object.keys(books).map((key) => (
-          <div key={key}>
+          <div key={key} className="maindiv">
             {books[key].map((item) => (
-              <div key={key}>
+              <div key={key} className="Book-container">
                 <li key={key}><Book item={item} itemId={key} /></li>
               </div>
             ))}
@@ -50,5 +56,10 @@ function Books() {
     </div>
   );
 }
-
+Books.propTypes = {
+  statechange: PropTypes.func,
+};
+Books.defaultProps = {
+  statechange: func,
+};
 export default Books;
