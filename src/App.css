@@ -32,6 +32,7 @@ li {
   color: #0290ff;
   font-family: "Montserrat", sans-serif;
 }
+
 @media screen and (min-width: 1400px) {
   .nav-wrap p {
     margin-left: 103px;
@@ -40,13 +41,15 @@ li {
     color: #0290ff;
     font-family: "Montserrat", sans-serif;
   }
+
   .progress {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 300px;
+  }
 }
-}
+
 .book-list {
   width: 100%;
   align-items: center;
