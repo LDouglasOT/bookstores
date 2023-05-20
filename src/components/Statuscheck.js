@@ -2,7 +2,9 @@ import React from 'react';
 
 function Statuscheck() {
   return (
-    <button className="statuscheck" type="button">Check Status</button>
+    <div className="status-home">
+      <h5>Under Construction</h5>
+    </div>
   );
 }
 
